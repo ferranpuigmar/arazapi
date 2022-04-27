@@ -15,8 +15,10 @@ export const productToDTO = (product: Product): productDTO => {
     so: product.so ?? '',
     resolution: product.resolution ?? '',
     battery: product.battery ?? '',
-    size: product.size ?? '',
+    size: product.size,
     weight: product.weight ?? 0,
     url: product.url ?? '',
+    description: product.description ?? '',
+    colors: product.colors,
   };
 };
