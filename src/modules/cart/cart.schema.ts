@@ -9,10 +9,15 @@ export class Cart {
   _id: string;
 
   @Prop({ required: true })
-  colorCode: number;
+  colors: [
+    {
+      code: string;
+      name: string;
+    },
+  ];
 
   @Prop({ required: true })
-  storageCode: number;
+  quantity: number;
 }
 
 export const CartSchema = SchemaFactory.createForClass(Cart);

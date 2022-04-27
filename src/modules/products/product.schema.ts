@@ -32,14 +32,33 @@ export class Product {
   @Prop()
   battery: string;
 
-  @Prop()
-  size: string;
+  @Prop({
+    type: {
+      width: String,
+      height: String,
+    },
+  })
+  size: {
+    width: string;
+    height: string;
+  };
 
   @Prop()
   weight: number;
 
   @Prop({ required: true })
   url: string;
+
+  @Prop()
+  description: string;
+
+  @Prop({ required: true })
+  colors: [
+    {
+      code: string;
+      name: string;
+    },
+  ];
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
