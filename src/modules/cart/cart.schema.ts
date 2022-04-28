@@ -6,7 +6,7 @@ export type CartDocument = Cart & Document;
 @Schema()
 export class Cart {
   @Prop({ required: true })
-  _id: string;
+  id: string;
 
   @Prop({ required: true })
   colors: [
