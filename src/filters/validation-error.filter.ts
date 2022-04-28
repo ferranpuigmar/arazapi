@@ -28,6 +28,6 @@ export class AllExceptionsFilter implements ExceptionFilter {
       });
     };
 
-    responseMessage(exception.name, exception.message);
+    return responseMessage(exception.name, exception.message);
   }
 }
