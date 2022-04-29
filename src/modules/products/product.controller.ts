@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { productToDTO, productDTO } from './dto/product.dto';
 import { ProductsService } from './product.services';
 
@@ -14,6 +14,16 @@ export class ProductsController {
     } catch (error) {
       console.log(error);
       return [];
+    }
+  }
+
+  @Get('/product/:id')
+  async getProductById(@Param() params: { id: string }): Promise<productDTO> {
+    try {
+      const productRequest = await this.productServices.findById(params.id);
+      return productToDTO(productRequest);
+    } catch (error) {
+      console.log(error);
     }
   }
 }

@@ -6,7 +6,7 @@ export type productDTO = Omit<Product, '_id'> & {
 
 export const productToDTO = (product: Product): productDTO => {
   return {
-    id: product._id,
+    id: product._id.toString(),
     brand: product.brand,
     model: product.model ?? '',
     price: product.price ?? 0,
